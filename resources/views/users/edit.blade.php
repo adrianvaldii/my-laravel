@@ -29,7 +29,7 @@
         {!! Form::text('phone', $user->phone, array('class' => 'form-control', 'placeholder' => 'e.g. 08111438747')) !!}
       </div>
 
-      {!! Form::submit('Create User!', array('class' => 'btn btn-primary')) !!}
+      {!! Form::submit('Update User!', array('class' => 'btn btn-primary')) !!}
       <a href="{!! URL::to('users') !!}" class="btn btn-link">Cancel</a>
     {!! Form::close() !!}
   </div>

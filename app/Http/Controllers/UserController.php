@@ -47,7 +47,13 @@ class UserController extends Controller
           'address' => 'required',
           'phone' => 'required'
         );
-        $validator = Validator::make(Input::all(), $rules);
+        // custom message
+        $messages = array(
+          'name.required' => 'Masukkan nama lengkap anda',
+          'address.required' => 'Masukkan alamat anda',
+          'phone.required' => 'Masukkan nomor telepon anda'
+        );
+        $validator = Validator::make(Input::all(), $rules, $messages);
         if ($validator->fails()) {
             return redirect('users/create')
                         ->withErrors($validator)
@@ -113,8 +119,13 @@ class UserController extends Controller
           'address' => 'required',
           'phone' => 'required'
         );
-
-        $validator = Validator::make(Input::all(), $rules);
+        // custom message
+        $messages = array(
+          'name.required' => 'Masukkan nama lengkap anda',
+          'address.required' => 'Masukkan alamat anda',
+          'phone.required' => 'Masukkan nomor telepon anda'
+        );
+        $validator = Validator::make(Input::all(), $rules, $messages);
         if ($validator->fails()) {
             return redirect('users/create')
                         ->withErrors($validator)
